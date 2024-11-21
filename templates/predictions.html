@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+<body class="dark-theme">
+  <button id="theme-toggle" class="theme-toggle">
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <nav class="topnav glass-effect">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/icons/logo.png') }}" alt="Finance Logo">
+      <h2>Personal Finance</h2>
+    </div>
+    <ul>
+      <li>
+        <a href="{{ url_for('dashboard') }}"><i class="fas fa-home"></i> Dashboard</a>
+      </li>
+      <li class="active">
+        <a href="{{ url_for('predictions') }}"><i class="fas fa-chart-line"></i> Predictions</a>
+      </li>
+      <li>
+        <a href="#budget"><i class="fas fa-wallet"></i> Budget</a>
+      </li>
+      <li>
+        <a href="#reports"><i class="fas fa-file-alt"></i> Reports</a>
+      </li>
+      <li>
+        <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <header>
+      <h1>Personal Finance Predictor</h1>
+      <p>Enter your financial details to predict your savings and get budget suggestions.</p>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <h2>Enter Financial Data</h2>
+        <form id="finance-form">
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" min="18" max="100" required>
+
+          <label for="income">Income (Rs):</label>
+          <input type="number" id="income" name="income" required>
+
+          <label for="rent">Rent (Rs):</label>
+          <input type="number" id="rent" name="rent" required>
+
+          <label for="food">Food Expenses (Rs):</label>
+          <input type="number" id="food" name="food" required>
+
+          <button type="submit">Predict Savings</button>
+        </form>
+      </section>
+
+      <section class="result-section">
+        <h2>Prediction Results</h2>
+        <div id="prediction-output">Submit your data to see predictions.</div>
+      </section>
+
+      <section class="chart-section">
+        <h2>Visualization</h2>
+        <canvas id="chartCanvas"></canvas>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2024 Personal Finance Predictor</p>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
+

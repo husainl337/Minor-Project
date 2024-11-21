@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+<body class="dark-theme">
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <nav class="topnav glass-effect">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/icons/logo.png') }}" alt="Finance Logo">
+            <h2>Personal Finance</h2>
+        </div>
+        <ul>
+            <li class="active">
+                <a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="{{ url_for('predictions') }}"><i class="fas fa-chart-line"></i> Predictions</a>
+            </li>
+            <li>
+                <a href="#budget"><i class="fas fa-wallet"></i> Budget</a>
+            </li>
+            <li>
+                <a href="#reports"><i class="fas fa-file-alt"></i> Reports</a>
+            </li>
+            <li>
+                <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <header data-aos="fade-down">
+            <div class="header-content glass-effect">
+                <div class="welcome-section">
+                    <h1 class="gradient-text">Welcome Back<span class="user-name">!</span></h1>
+                    <p class="subtitle">Your financial summary for <span id="currentDate"></span></p>
+                </div>
+                <div class="hero-illustration">
+                    <img src="{{ url_for('static', filename='images/illustrations/finance-hero.svg') }}" 
+                         alt="Finance Illustration"
+                         class="hero-img">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="dashboard-grid">
+                <div class="dashboard-card glass-effect" data-aos="fade-up">
+                    <div class="card-header">
+                        <h2>Financial Overview</h2>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="metric-card">
+                                        <div class="metric-icon income">
+                                            <i class="fas fa-wallet"></i>
+                                        </div>
+                                        <div class="metric-details">
+                                            <h3>Total Income</h3>
+                                            <p class="metric-value">₹85,000</p>
+                                            <span class="metric-change positive">
+                                                <i class="fas fa-arrow-up"></i> 8.2%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Add more slides -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card glass-effect" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-header">
+                        <h2>Expense Analytics</h2>
+                        <div class="chart-controls">
+                            <button class="chart-type-btn active" data-type="bar">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                            <button class="chart-type-btn" data-type="line">
+                                <i class="fas fa-chart-line"></i>
+                            </button>
+                            <button class="chart-type-btn" data-type="pie">
+                                <i class="fas fa-chart-pie"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="expenseChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-card glass-effect" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-header">
+                        <h2>Recent Transactions</h2>
+                        <button class="btn-primary">View All</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="transaction-list">
+                            {% if not transactions %}
+                            <div class="empty-state">
+                                <img src="{{ url_for('static', filename='images/illustrations/empty-state.svg') }}" 
+                                     alt="No transactions"
+                                     class="empty-state-img">
+                                <p>No transactions yet</p>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html> 

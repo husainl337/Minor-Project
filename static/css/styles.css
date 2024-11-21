@@ -1,0 +1,482 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --hover-color: #2980b9;
+  --text-color: #ecf0f1;
+  --transition-speed: 0.3s;
+  --primary-light: #4f46e5;
+  --background-light: #f3f4f6;
+  --card-bg-light: rgba(255, 255, 255, 0.9);
+  --text-light: #1f2937;
+  --primary-dark: #818cf8;
+  --background-dark: #111827;
+  --card-bg-dark: rgba(17, 24, 39, 0.8);
+  --text-dark: #f9fafb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f6fa;
+  background-image: url('../images/backgrounds/pattern.svg');
+  background-repeat: repeat;
+  background-size: 200px;
+}
+
+.topnav {
+  background-color: var(--primary-color);
+  padding: 0 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.topnav .logo h2 {
+  color: var(--text-color);
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.topnav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.topnav li {
+  position: relative;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  display: block;
+  padding: 1.5rem 1rem;
+  transition: all var(--transition-speed);
+}
+
+.topnav a:hover {
+  color: var(--secondary-color);
+}
+
+.topnav li.active a {
+  color: var(--secondary-color);
+}
+
+.topnav li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--secondary-color);
+  transition: width var(--transition-speed);
+}
+
+.topnav li:hover::after,
+.topnav li.active::after {
+  width: 100%;
+}
+
+.main-content {
+  margin-top: 70px; /* Height of the navbar */
+  padding: 2rem;
+  position: relative;
+}
+
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-image: url('../images/backgrounds/wave.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .topnav {
+      flex-direction: column;
+      padding: 0;
+  }
+
+  .topnav ul {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .topnav li {
+      width: 100%;
+      text-align: center;
+  }
+
+  .topnav a {
+      padding: 1rem;
+  }
+
+  .main-content {
+      margin-top: 120px; /* Adjusted for mobile */
+  }
+
+  .hero-img {
+      max-width: 80%;
+      margin: 2rem auto;
+  }
+
+  .feature-img {
+      width: 80px;
+      height: 80px;
+  }
+}
+
+/* Keep your existing form and button styles */
+input, button {
+  transition: all var(--transition-speed);
+}
+
+input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+header {
+  background: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+main {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.form-section, .result-section, .chart-section {
+  background: white;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--hover-color);
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #ddd;
+  color: #555;
+}
+
+canvas {
+  width: 100%;
+  height: 400px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #e9ecef;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Add these styles to your existing CSS */
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Add a subtle transition effect for better UX */
+input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Style for input labels */
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.chart-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.chart-section canvas {
+  max-height: 400px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+  --background: var(--background-dark);
+  --card-bg: var(--card-bg-dark);
+  --text: var(--text-dark);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary-light), var(--info));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+/* Modern Card Styles */
+.dashboard-card {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Animated Stats */
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+  transition: all 0.3s ease;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: var(--primary-light);
+  color: white;
+}
+
+/* Responsive Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* Modern Button Styles */
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-light), var(--info));
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+/* Logo Styles */
+.logo img {
+  height: 40px;
+  width: auto;
+  margin-right: 1rem;
+}
+
+/* Avatar Styles */
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-light);
+}
+
+/* Hero Image Styles */
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0px);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}
+
+/* Feature Images */
+.feature-img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-img {
+  transform: scale(1.1);
+}
+
+/* Empty State Image */
+.empty-state-img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
