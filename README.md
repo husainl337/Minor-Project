@@ -1,9 +1,3 @@
-Husain Hashemi - 20222727      
-Bvoc. Software Development  
-Minor project  
-
-
-
 # Personal Finance Savings Predictor
 
 A web application that helps users plan their savings by analyzing their income and expenses. The application predicts savings and provides recommendations for achieving financial goals.
