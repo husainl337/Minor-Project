@@ -14,12 +14,13 @@ A web application that helps users plan their savings by analyzing their income 
 ## Technologies Used
 
 ### **Frontend**
-- HTML, CSS, JavaScript
-- Framework: [Bootstrap](https://getbootstrap.com) (for responsive design)
+- HTML, CSS, JavaScript: For user interface development.
+- Chart.js: For data visualization (e.g., expense trends).
 
 ### **Backend**
-- Python (Flask Framework)
-- RESTful API Integration
+- Flask: Python framework for API development.
+- Pandas: For data manipulation.
+- Scikit-learn: For machine learning model development.
 
 ### **Machine Learning**
 - Libraries:
@@ -39,14 +40,23 @@ A web application that helps users plan their savings by analyzing their income 
 ## Getting Started
 
 ### **Prerequisites**
-- Python 3.9 or higher
-- Node.js (optional for frontend development)
+Before starting, ensure you have the following installed on your system:
+- **Python**: Version 3.9 or higher. [Download Python](https://www.python.org/downloads/).
+- **Node.js**: (Optional, required only for frontend development). [Download Node.js](https://nodejs.org/).
+- **Git**: For cloning the repository. [Download Git](https://git-scm.com/downloads).
+
+- Ensure that Python’s package manager, `pip`, is up-to-date:
+- ```bash
+- python -m pip install --upgrade pip
 
 ### **Installation Steps**
 1. Clone the repository:
    ```bash
    git clone https://github.com/husainl337/Minor-Project.git
-   cd Minor project
+   cd Minor-Project
+
+2. Set Up a Virtual Environment: It's recommended to use a virtual environment to avoid dependency conflicts:
+   python -m venv env
 
 ## Future Plans
 
