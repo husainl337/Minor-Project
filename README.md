@@ -46,8 +46,8 @@ Before starting, ensure you have the following installed on your system:
 - **Git**: For cloning the repository. [Download Git](https://git-scm.com/downloads).
 
 - Ensure that Python’s package manager, `pip`, is up-to-date:
-- ```bash
-- python -m pip install --upgrade pip
+   ```bash
+   python -m pip install --upgrade pip
 
 ### **Installation Steps**
 1. Clone the repository:
@@ -56,8 +56,22 @@ Before starting, ensure you have the following installed on your system:
    cd Minor-Project
 
 2. Set Up a Virtual Environment: It's recommended to use a virtual environment to avoid dependency conflicts:
+   ```bash
    python -m venv env
 
+3. Activate the virtual environment:
+   ```bash
+   env\Scripts\activate
+
+4. Install Dependencies: Install the required Python libraries specified in requirements.txt:
+   ```bash
+   pip install -r requirements.txt
+
+5. Start the Backend Server: Start the Flask server:
+   ```bash
+   python app.py
+
+6. The Server and Web Application will Run at http://127.0.0.1:5000
 ## Future Plans
 
 This project is just the beginning of a comprehensive personal finance application. Here are the planned enhancements:
