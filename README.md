@@ -73,6 +73,8 @@ Before starting, ensure you have the following installed on your system:
    python app.py
 
 6. The Server and Web Application will Run at http://127.0.0.1:5000
+
+
 ## Future Plans
 
 This project is just the beginning of a comprehensive personal finance application. Here are the planned enhancements:
