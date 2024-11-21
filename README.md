@@ -29,6 +29,7 @@ A web application that helps users plan their savings by analyzing their income 
   - `scikit-learn`: Model training and evaluation
   - `pickle`: Model serialization
 - Model: Linear Regression for savings prediction
+  - `Train-Test split`
 
 ### **Others**
 - JSON: Data exchange between frontend and backend
