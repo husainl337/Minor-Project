@@ -2,19 +2,16 @@ Husain Hashemi - 20222727
 Bvoc. Software Development  
 Minor project  
 
-    
-Usage:  
-Download the whole folder and run the app.py file to launch the server.  
+
 
 # Personal Finance Savings Predictor
 
-A web application that helps users plan their savings by analyzing their income and expenses. The application predicts savings and provides recommendations for achieving financial goals, such as buying a specific item within a specified time.
+A web application that helps users plan their savings by analyzing their income and expenses. The application predicts savings and provides recommendations for achieving financial goals.
 
 ## Features
 
 - **Income and Expense Tracking**: Input monthly income and expenses across various categories.
 - **Savings Prediction**: Estimate potential savings based on financial data.
-- **Goal-Based Saving**: Calculate how much to save monthly to purchase a target item within a given time frame.
 - **Interactive UI**: Simple, user-friendly interface for data input and results visualization.
 - **Backend API**: Robust RESTful API to handle predictions using a trained machine learning model.
 
