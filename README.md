@@ -4,5 +4,5 @@ Minor project
 
     
 Usage:  
-download the whole folder and run the app.py file to launch the server.  
+Download the whole folder and run the app.py file to launch the server.  
 
